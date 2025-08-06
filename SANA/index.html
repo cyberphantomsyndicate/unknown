@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memories of Sana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #ff6f91;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 105, 135, 0.5);
+      margin-top: 1rem;
+    }
+
+    .timeline {
+      max-width: 700px;
+      width: 90%;
+      padding: 2rem 1rem;
+    }
+
+    .event {
+      margin-bottom: 2rem;
+      border-left: 2px solid #ff6f91;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      background: #ff6f91;
+      border-radius: 50%;
+    }
+
+    .event h3 {
+      margin: 0;
+      color: #ff9aa2;
+    }
+
+    .event p {
+      margin: 0.5rem 0 0;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .mask {
+      font-size: 1.2rem;
+      margin: 3rem 0 1rem;
+      color: #aaa;
+      text-align: center;
+      animation: fade 3s infinite alternate;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+
+    .insta-links {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .insta-links a {
+      color: #ff6f91;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .insta-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .player {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    audio {
+      width: 300px;
+      max-width: 80%;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #555;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Memories of Sana</h1>
+    <p>High School Dhaka • August 2025</p>
+    <img src="sana.jpg" alt="Sana's Photo" class="profile-img">
+  </header>
+
+  <div class="timeline">
+    <div class="event">
+      <h3>3rd August 2025</h3>
+      <p>It started with a reel. Just a casual comment, and suddenly we were talking.</p>
+    </div>
+
+    <div class="event">
+      <h3>5th August 2025</h3>
+      <p>You blocked me. Without a warning, without closure. The silence was louder than any words.</p>
+    </div>
+
+    <div class="event">
+      <h3>6th August 2025</h3>
+      <p>“I'm getting married,” you said. I never saw your full face. Just a masked smile that now lives in my memory.</p>
+    </div>
+  </div>
+
+  <div class="mask" id="maskText">Some people leave, without ever arriving fully.</div>
+
+  <div class="insta-links">
+    <p>Her Instagram: <a href="https://www.instagram.com/cute_sana491/" target="_blank">@cute_sana491</a></p>
+    <p>My ID: <a href="https://www.instagram.com/_b06250bs/" target="_blank">@_b06250bs</a></p>
+  </div>
+
+  <div class="player">
+    <h3>Play Memory Song 🎵</h3>
+    <audio controls>
+      <source src="sana.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <footer>
+    Made by Unknown | August 2025 | Some memories are better as mysteries.
+  </footer>
+
+  <script>
+    const lines = [
+      "I never saw your smile — only a masked memory.",
+      "It was just a reel. But you stayed longer in my mind.",
+      "You left quietly, but your memory stayed loud.",
+      "A stranger once, unforgettable now."
+    ];
+
+    let index = 0;
+    setInterval(() => {
+      document.getElementById('maskText').innerText = lines[index % lines.length];
+      index++;
+    }, 4000);
+  </script>
+
+</body>
+</html>
